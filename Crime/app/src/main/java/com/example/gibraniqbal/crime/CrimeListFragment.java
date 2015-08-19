@@ -3,11 +3,13 @@ package com.example.gibraniqbal.crime;
 import java.util.ArrayList;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,31 +25,32 @@ public class CrimeListFragment extends ListFragment {
     private ArrayList<Crime> mCrimes;
     private boolean mSubtitleVisible;
     private ActionBar actionBar;
-//    private CrimeListActivity activity;
+    private static final String TAG = "CrimeListFragment";
+    private Context context;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
-        actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar = ((AppCompatActivity)context).getSupportActionBar();
         getActivity().setTitle(R.string.crimes_title);
         mCrimes = CrimeLab.get(getActivity()).getCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
         setRetainInstance(true);
-        mSubtitleVisible = false;
+//        mSubtitleVisible = false;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View v = super.onCreateView(inflater, parent, savedInstanceState);
-        
-//           if (mSubtitleVisible) {
-//                actionBar.setSubtitle(R.string.subtitle);
-//            }
-        
-        return v;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+//        View v = super.onCreateView(inflater, parent, savedInstanceState);
+//
+////           if (mSubtitleVisible) {
+////                actionBar.setSubtitle(R.string.subtitle);
+////            }
+//
+//        return v;
+//    }
 
     public void onListItemClick(ListView l, View v, int position, long id) {
         // get the Crime from the adapter
@@ -67,7 +70,7 @@ public class CrimeListFragment extends ListFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_crime_list, menu);
-        MenuItem showSubtitle = menu.findItem(R.id.menu_item_show_subtitle);
+//        MenuItem showSubtitle = menu.findItem(R.id.menu_item_show_subtitle);
 //        if (mSubtitleVisible && showSubtitle != null) {
 //            showSubtitle.setTitle(R.string.hide_subtitle);
 //        }
@@ -84,15 +87,19 @@ public class CrimeListFragment extends ListFragment {
                 startActivityForResult(i, 0);
                 return true;
             case R.id.menu_item_show_subtitle:
-            	if (actionBar.getSubtitle() == null) {
-                    actionBar.setSubtitle(R.string.subtitle);
-                    mSubtitleVisible = true;
-//                    item.setTitle(R.string.hide_subtitle);
-            	}  else {
-            		actionBar.setSubtitle(null);
-            		 mSubtitleVisible = false;
-//            		item.setTitle(R.string.show_subtitle);
-            	}
+                Log.d(TAG,"show_subtitle_clicked");
+//            	if (actionBar.getSubtitle() == null) {
+//                    actionBar.setSubtitle(R.string.subtitle);
+//                    mSubtitleVisible = true;
+////                    item.setTitle(R.string.hide_subtitle);
+//            	}
+//                else {
+//            		actionBar.setSubtitle(null);
+//            		 mSubtitleVisible = false;
+////            		item.setTitle(R.string.show_subtitle);
+//            	}
+                if(actionBar==null) Log.d(TAG,"ActionBar is null");
+                actionBar.setSubtitle(R.string.subtitle);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -129,5 +136,10 @@ public class CrimeListFragment extends ListFragment {
         }
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
 }
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Android\android-sdk_r23.0.2-windows\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-e96f6ef8e7166d4014563f84c730b871f26efc84.jar" />
+    </item>
+    <item
+        jar="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\pre-dexed\debug\classes-1683da0aa0e29acaa511496334de9ef082e4af8e.jar" />
+    </item>
+    <item
+        jar="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\pre-dexed\debug\classes-aae91e31a1370a9823252e4aa773e898cab3557a.jar" />
+    </item>
+    <item
+        jar="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\GibranIqbal\AndroidStudioProjects\Crime\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-1d873a4a90d436e77c1d7562e8fc9d1f94652406.jar" />
+    </item>
+
+</items>
